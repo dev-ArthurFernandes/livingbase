@@ -4,9 +4,77 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/filters.css">
+    <link rel="stylesheet" href="styles/postFeed.css">
+    <link rel="stylesheet" href="styles/footer.css">
+    <script defer type="module" src="index.js"></script>
     <title>Living</title>
 </head>
 <body>
-    <main></main>
+    <main>
+        <div class="container">
+            <section class="header">
+                <div class="rightLogo">
+                    <div class="logo">
+                        <img src="/img/Logo.svg" alt="Living Logo">
+                        <h1>Living</h1>
+                    </div>
+                    <div class="content">
+                        <h2>Cuidando de cada <span class="green">detalhe</span> da sua casa</h2>
+                        <p>Trazendo uma nova e incrível experiência para você e para seu lar</p>
+                        <strong onclick="scrollar('bottom')">Consumir conteúdos</strong>
+                    </div>
+                </div>
+                <div class="leftImg">
+                    <img src="/img/img1.svg" alt="img1">
+                </div>
+            </section>
+
+            <section class="navFilter">
+                <button class='arrow'  id="arrowLeft"> <img src="/img/angle-left.png" alt="angle-left"> </button>
+                <ol class="filterList">
+                    <li class="category true" id="All"           > Todos       </li>
+                    <li class="category"      id="Painting"      > Pintura     </li>
+                    <li class="category"      id="Decoration"    > Decoração   </li>
+                    <li class="category"      id="Organization"  > Organização </li>
+                    <li class="category"      id="Cleaning"      > Limpeza     </li>
+                    <li class="category"      id="Safety"        > Segurança   </li>
+                    <li class="category"      id="Remodeling"    > Reforma     </li>
+                    <li class="category"      id="Aroma"         > Aroma       </li>
+                    <li class="category"      id="Health"        > Saúde       </li>
+                </ol>
+                <button class="arrow" id="arrowRight"> <img src="/img/angle-right.png" alt="angle-right"> </button>
+            </section>
+            
+            <section>
+                <ol class="feed">
+                    <!-- <li class="card">
+                        <div id="image">
+                            <img src="/img/huy-phan-dM317CbttyY-unsplash.jpg" alt="test">
+                        </div>
+                        <h2>Cuidados para manter com plantas dentro de apartamentos</h2>
+                        <p>Invite as many collaborators as you’d like. They can register as team members or join as guests – no registration required.</p>
+                        <span class="green">Acessar conteúdo</span>
+                    </li> -->
+                </ol>
+            </section>
+        </div>
+       
+    </main>
+    <footer class="footerTag">
+        <div class="container">
+            <div class="footerContent">
+                <div class="logo">
+                    <img src="/img/Logo.svg" alt="Living Logo">
+                    <h2 style="color: var(--color-grey-700);"">Living</h2>
+                </div>
+                <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+            </div>
+            <button onclick="scrollar('top')">Voltar para o topo</button>
+        </div>
+    </footer>
 </body>
 </html>
