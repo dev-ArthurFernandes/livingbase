@@ -30,7 +30,7 @@ body{
   width: 100vw;
   display: flex;
   flex-direction: column;
-  overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 main{
@@ -42,6 +42,14 @@ main{
 
 .green{
   color: var(--color-brand-100);
+}
+
+.access{
+  cursor: pointer;
+}
+
+.access:hover{
+  text-decoration: underline;
 }
 
 section{
