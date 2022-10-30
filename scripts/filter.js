@@ -6,23 +6,19 @@ function setFilter(){
 
     const filters = document.querySelectorAll('.category')
 
-    let filtered = ''
-    localStorage.setItem('@KenzieLiving:Filter', filtered)
     
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
             feed.innerHTML = ''
-            filtered = filter.id
-            localStorage.setItem('@KenzieLiving:Filter', filtered)
             
             filter.classList = 'category true'
             
             filters.forEach(elem => {
-                if(elem.id !== filtered){
+                if(elem.id !== filter.id){
                     elem.classList = 'category'
                 }
             })
-            renderFeed(0, filtered)
+            renderFeed(filter.id)
         })
     })
 }

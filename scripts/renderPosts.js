@@ -31,44 +31,54 @@ async function createCards(element){
     return li
 }
 
-async function storageNews(page, filter){
+async function storageNews(index, page, filter){
 
-    let pages = page
-    
-    let allPosts = await getAllPosts(pages)
+    const newsArray = await getAllPosts(page)
 
-    const {news} = await allPosts
+    const {news} = newsArray
 
-    let array = []
+    console.log(news)
 
-    await news.forEach(async (element) => {
-        const card = await createCards(element)
-
-        if(filter === 'Todos' || !filter){
-            array.push(card)
-        }else if(element.category === filter){
-            array.push(card)
-        }
-    })
-
-    return array
+    if(!filter){
+        return news[index]
+    }else if (news[index].category === filter){
+        /* Quando chega na ultima pagina tem tem nem um item na lista 'news' com isso o codigo quebra, pois
+        ele tenta fazer o if com o 'undefined', por tanto fazer uma logica que só passe objetos existentes... */
+        return news[index]
+    }
 }
 
-async function renderFeed(page, filter){
+async function renderFeed(filter){
 
     const feed = document.querySelector('.feed')
 
-    let pages = page
+    let page = 0
 
-    const divObserver = document.querySelector('.divObserver')
+    let index = 0
 
-    let array = await storageNews(pages, filter)
+    let posts = []
 
-    array.forEach(element => feed.appendChild(element))
-    console.log(array)
+   while(posts.length < 6){
+    console.log(index)
+    const post = await storageNews(index, page, filter)
 
-    divObserver.style = 'position: absolute; bottom: 0;'
-    observer.observe(divObserver)
+    if(post){
+        posts.push(post)
+        index++
+    }else{
+        index++
+    }
+    if(index === 5){
+        page++
+        index = 0
+    }
+   }
+   console.log(posts)
+   posts.forEach(async (element) => {
+    const card = await createCards(element)
+
+    feed.append(card)
+   })
 }
 
 export default renderFeed
