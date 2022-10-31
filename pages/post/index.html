@@ -4,9 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/globalStyles.css">
+    <link rel="stylesheet" href="/styles/container.css">
+    <link rel="stylesheet" href="/styles/footer.css">
+    <link rel="stylesheet" href="/styles/filters.css">
+    <link rel="stylesheet" href="styles/header.css">
+    <link rel="stylesheet" href="styles/postHeader.css">
+    <link rel="stylesheet" href="styles/postContent.css">
+    <script defer type="module" src="index.js"></script>
     <title>Living</title>
 </head>
 <body>
-    <main></main>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="/img/Logo.svg" alt="Living Logo">
+                <h1>Living</h1>
+            </div>
+            <button id="goHome">Home</button>
+        </div>
+    </header>
+    <main>
+        <section class="postHeader">
+            <div class="container">
+                <h2 id="postTitle"></h2>
+                <p id="postDescription"></p>
+            </div>
+        </section>
+        <div class="container">
+            <section class="postContent">
+                <div id="DivpostImg">
+                    <img id="postImg">
+                </div>
+                <p id="postContent"></p>
+            </section>
+            <section class="navFilter">
+                <button class='arrow'  id="arrowLeft"> <img src="/img/angle-left.png" alt="angle-left"> </button>
+                <ol class="filterList">
+                    <li class="category true" id="Todos"        > Todos       </li>
+                    <li class="category"      id="Pintura"      > Pintura     </li>
+                    <li class="category"      id="Decoração"    > Decoração   </li>
+                    <li class="category"      id="Organização"  > Organização </li>
+                    <li class="category"      id="Limpeza"      > Limpeza     </li>
+                    <li class="category"      id="Segurança"    > Segurança   </li>
+                    <li class="category"      id="Reforma"      > Reforma     </li>
+                    <li class="category"      id="Aromas"       > Aromas       </li>
+                    <li class="category"      id="Saúde"        > Saúde       </li>
+                </ol>
+                <button class="arrow" id="arrowRight"> <img src="/img/angle-right.png" alt="angle-right"> </button>
+            </section>
+        </div>
+    </main>
+    <footer class="footerTag">
+        <div class="container">
+            <div class="footerContent">
+                <div class="logo">
+                    <img src="/img/Logo.svg" alt="Living Logo">
+                    <h2 style="color: var(--color-grey-700);"">Living</h2>
+                </div>
+                <p>The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software.</p>
+            </div>
+            <button id="backTo">Voltar para o topo</button>
+        </div>
+    </footer>
 </body>
 </html>
