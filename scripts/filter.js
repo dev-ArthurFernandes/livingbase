@@ -1,30 +1,42 @@
-import renderFeed from "./renderPosts.js"
+import observer from "./observer.js"
+import {renderFeed} from "./renderPosts.js"
 
 function setFilter(){
 
-    const feed = document.querySelector('.feed')
+    const feedSection = document.querySelector('.feedSection')
 
     const filters = document.querySelectorAll('.category')
 
-    let filtered = ''
-    localStorage.setItem('@KenzieLiving:Filter', filtered)
-    
+    const divObserver = document.querySelector('.divObserver')
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
-            feed.innerHTML = ''
-            filtered = filter.id
-            localStorage.setItem('@KenzieLiving:Filter', filtered)
+            observer.unobserve(divObserver)
+            feedSection.innerHTML = ''
             
             filter.classList = 'category true'
             
             filters.forEach(elem => {
-                if(elem.id !== filtered){
+                if(elem.id !== filter.id){
                     elem.classList = 'category'
                 }
             })
-            renderFeed(0, filtered)
+            renderFeed(0, filter.id)
         })
     })
 }
 
-export default setFilter
+function filterMark(category){
+    
+    const filters = document.querySelectorAll('.category')
+
+    filters.forEach(filter => {
+        filter.classList = 'category'
+        filter.style = '    cursor: default;'
+        if(filter.id === category){
+            filter.classList = 'category true'
+        }
+        
+    })
+}
+
+export {setFilter, filterMark}

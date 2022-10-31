@@ -1,0 +1,21 @@
+/* Desenvolva seu estilo aqui */
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.header > .container{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#goHome{
+    background-color: var(--color-grey-700);
+    color: var(--color-grey-200);
+}
+#goHome:hover{
+    background-color: var(--color-grey-600);
+}

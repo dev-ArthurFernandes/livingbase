@@ -1,22 +1,23 @@
-import renderFeed from "./renderPosts.js"
-
-const feed = document.querySelector('.feed')
+import {moreNews} from "./renderPosts.js"
 
 let page =  1
 
 const observer =  new IntersectionObserver(async (entry) => {
-    console.log(entry)
+    
+    const divObserver = document.querySelector('.divObserver')
+    
+    observer.unobserve(divObserver)
+
     const filter = localStorage.getItem("@KenzieLiving:Filter")
 
-    if(page < 4){
+    if(page < 3){
         if(entry[0].isIntersecting){
-            await renderFeed(page, filter)
+            await moreNews(page, filter)
             page++
         }
     }
-    if(page === 4){
-        page =  1
-    }
+       
+   observer.observe(divObserver)
 })
 
 export default observer

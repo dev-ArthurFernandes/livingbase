@@ -2,6 +2,27 @@
     display: flex;
     justify-content: space-between ;
     position: relative;
+    margin: 25px 0;
+}
+
+.navFilter::before{
+    width: 20px;
+    height: 100%;
+    content: '';
+    background-color: white;
+    filter: blur(5px);
+    position: absolute;
+    right: -10px;
+}
+
+.navFilter::before{
+    width: 20px;
+    height: 100%;
+    content: '';
+    background-color: white;
+    filter: blur(5px);
+    position: absolute;
+    left: -20px;
 }
 
 .arrow{
@@ -64,6 +85,7 @@
     font-size: 16px;
     line-height: 150%;
     color: var(--color-grey-200);
+    cursor: pointer;
 }
 
 .true{
