@@ -1,15 +1,17 @@
-import renderFeed from "./renderPosts.js"
+import observer from "./observer.js"
+import {renderFeed} from "./renderPosts.js"
 
 function setFilter(){
 
-    const feed = document.querySelector('.feed')
+    const feedSection = document.querySelector('.feedSection')
 
     const filters = document.querySelectorAll('.category')
 
-    
+    const divObserver = document.querySelector('.divObserver')
     filters.forEach(filter => {
         filter.addEventListener('click', () => {
-            feed.innerHTML = ''
+            observer.unobserve(divObserver)
+            feedSection.innerHTML = ''
             
             filter.classList = 'category true'
             
@@ -18,9 +20,23 @@ function setFilter(){
                     elem.classList = 'category'
                 }
             })
-            renderFeed(filter.id)
+            renderFeed(0, filter.id)
         })
     })
 }
 
-export default setFilter
+function filterMark(category){
+    
+    const filters = document.querySelectorAll('.category')
+
+    filters.forEach(filter => {
+        filter.classList = 'category'
+        filter.style = '    cursor: default;'
+        if(filter.id === category){
+            filter.classList = 'category true'
+        }
+        
+    })
+}
+
+export {setFilter, filterMark}

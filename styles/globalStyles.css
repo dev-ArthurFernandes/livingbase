@@ -31,6 +31,8 @@ body{
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  justify-content: center;
+
 }
 
 main{
@@ -38,6 +40,8 @@ main{
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .green{
@@ -52,6 +56,17 @@ main{
   text-decoration: underline;
 }
 
-section{
+.feedSection{
   width: 100%;
+  min-height: 500px;
+  height: fit-content;
+  margin: 46px 0;
+}
+
+.logo{
+  display: flex;
+  gap: 16px;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 150%;
 }

@@ -1,12 +1,10 @@
 .feed{
     width: 100%;
-    height: fit-content;
-    display: flex;
-    margin: 46px 0;
     gap: 44px 0;
+    display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    position: relative;
+    margin-top: 20px;
 }
 
 .card{
