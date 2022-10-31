@@ -15,10 +15,6 @@
     align-items: center;
 }
 
-#postImg{
-    /* zoom: 100%; */
-}
-
 #postContent{
     color: var(--color-grey-200);
     font-weight: 400;
